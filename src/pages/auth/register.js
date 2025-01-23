@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaUser, FaLock, FaPhone } from 'react-icons/fa';
 import { useRouter } from 'next/router'; // Import useRouter for navigation
-import { Link } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Register() {
   const [email, setEmail] = useState('');
