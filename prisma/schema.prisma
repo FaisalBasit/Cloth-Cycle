@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id          Int        @id @default(autoincrement())
+  email       String?    @unique
+  phoneNumber String?    @unique
+  password    String
+  role        Role       @default(USER) // Role of the user (User or Admin)
+  vouchers    Voucher[]  // Relation to Voucher model
+  createdAt   DateTime   @default(now())
+  Donation    Donation[]
+
+  @@index([role]) // Optional: Add an index for quicker queries based on role
+}
+
+enum Role {
+  USER  // Regular user
+  ADMIN // Admin user
+}
+
+
+model Voucher {
+  id       Int    @id @default(autoincrement())
+  code     String @unique
+  discount Int
+  userId   Int
+  user     User   @relation(fields: [userId], references: [id]) // Reverse relation to User
+}
+
+model NGO {
+  id        Int        @id @default(autoincrement())
+  name      String
+  location  String
+  donations Donation[] // Relation to Donation model
+}
+
+model Donation {
+  id     Int  @id @default(autoincrement())
+  userId Int
+  ngoId  Int
+  user   User @relation(fields: [userId], references: [id]) // Reverse relation to User
+  ngo    NGO  @relation(fields: [ngoId], references: [id]) // Reverse relation to NGO
+}
