@@ -75,7 +75,8 @@ export default function Login() {
           />
         </div>
         <div className="mb-4 text-sm text-gray-600">
-          <span>Don't have an account? </span>
+          <span>Don&apos;t have an account? </span>
+          
           <Link href="/auth/register" className="text-blue-500 hover:underline">
             Register now
           </Link>
