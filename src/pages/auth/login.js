@@ -74,9 +74,9 @@ export default function Login() {
         </div>
         <div className="mb-4 text-sm text-gray-600">
           <span>Don't have an account? </span>
-          <a href="/auth/register" className="text-blue-500 hover:underline">
+          <link href="/auth/register" className="text-blue-500 hover:underline">
             Register now
-          </a>
+          </link>
         </div>
         <button
           type="submit"
