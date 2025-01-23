@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaUser, FaLock, FaPhone } from 'react-icons/fa';
 import { useRouter } from 'next/router'; // Import useRouter for navigation
+import { Link } from 'lucide-react';
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -92,9 +93,9 @@ export default function Register() {
         </div>
         <div className="mb-4 text-sm text-gray-600">
           <span>Already have an account? </span>
-          <link href="/auth/login" className="text-blue-500 hover:underline">
+          <Link href="/auth/login" className="text-blue-500 hover:underline">
             Login now
-          </link>
+          </Link>
         </div>
         <button
           type="submit"
