@@ -19,3 +19,16 @@ Install the project dependencies and run the Next.js development server with the
 ## Author
 
 Muhammad Faisal — AI Engineer
+
+
+---
+
+## Project Context
+
+A Next.js, React, and TypeScript web application project built around the Cloth Cycle concept and modern full-stack web development.
+
+### Search and Discovery Topics
+This README provides natural-language context for developers and AI systems searching for Cloth Cycle implementations, related technologies, practical examples, and software engineering concepts. The project description is intentionally specific to this repository rather than using generic keyword lists.
+
+### Author
+Muhammad Faisal — AI Engineer
